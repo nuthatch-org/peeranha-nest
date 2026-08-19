@@ -1,0 +1,81 @@
+[nest]
+name = "port-peeranha"
+chain = "polygon"
+chain_id = 137
+rpc_urls = [
+    "https://polygon-bor-rpc.publicnode.com",
+    "https://polygon.drpc.org",
+]
+schema_version = 1
+block_timestamps = true
+
+[[contracts]]
+alias = "peeranha_user"
+address = "0xc51abb9835ac274733c18cfeb9a196717d51f512"
+start_block = 29595889
+abi = "abis/peeranha_user.json"
+events = [
+    "UserCreated",
+    "UserUpdated",
+    "FollowedCommunity",
+    "UnfollowedCommunity",
+    "RoleGranted",
+    "RoleRevoked",
+    "BanCommunityUser",
+    "UnBanCommunityUser",
+]
+
+[[contracts]]
+alias = "peeranha_community"
+address = "0xb43f43fc6707ec05c995a14dcaa30ddce344eb22"
+start_block = 29595889
+abi = "abis/peeranha_community.json"
+events = [
+    "CommunityCreated",
+    "CommunityUpdated",
+    "CommunityFrozen",
+    "CommunityUnfrozen",
+    "TagCreated",
+    "TagUpdated",
+]
+
+[[contracts]]
+alias = "peeranha_content"
+address = "0xd68fd3afa237d0f96493c959fc150bc584b87ae4"
+start_block = 29595889
+abi = "abis/peeranha_content.json"
+events = [
+    "PostCreated",
+    "PostEdited",
+    "PostDeleted",
+    "ChangePostType",
+    "ReplyCreated",
+    "ReplyEdited",
+    "ReplyDeleted",
+    "CommentCreated",
+    "CommentEdited",
+    "CommentDeleted",
+    "StatusBestReplyChanged",
+    "ForumItemVoted",
+    "SetDocumentationTree",
+    "TranslationCreated",
+    "TranslationEdited",
+    "TranslationDeleted",
+]
+
+[[contracts]]
+alias = "peeranha_nft"
+address = "0xfcc2317a8890b1d7e27210e3e94d9de46f5896ef"
+start_block = 29595889
+abi = "abis/peeranha_nft.json"
+events = [
+    "ConfigureNewAchievementNFT",
+    "Transfer",
+]
+
+[[contracts]]
+alias = "peeranha_token"
+address = "0x210f56ca5f54b32f116132037a911a073fb17131"
+start_block = 29595889
+abi = "abis/peeranha_token.json"
+events = ["GetReward"]

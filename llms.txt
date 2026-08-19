@@ -1,0 +1,58 @@
+# nuthatch nest on polygon
+
+A self-hosted blockchain index. Query it locally; there is no third-party API.
+
+## Contracts
+- `peeranha_user` = 0xc51abb9835ac274733c18cfeb9a196717d51f512
+- `peeranha_community` = 0xb43f43fc6707ec05c995a14dcaa30ddce344eb22
+- `peeranha_content` = 0xd68fd3afa237d0f96493c959fc150bc584b87ae4
+- `peeranha_nft` = 0xfcc2317a8890b1d7e27210e3e94d9de46f5896ef
+- `peeranha_token` = 0x210f56ca5f54b32f116132037a911a073fb17131
+
+## Tables (one per contract event)
+- `peeranha_community__community_created` - CommunityCreated(address,uint32) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, user, id)
+- `peeranha_community__community_frozen` - CommunityFrozen(address,uint32) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, user, communityId)
+- `peeranha_community__community_unfrozen` - CommunityUnfrozen(address,uint32) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, user, communityId)
+- `peeranha_community__community_updated` - CommunityUpdated(address,uint32) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, user, id)
+- `peeranha_community__tag_created` - TagCreated(address,uint8,uint32) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, user, tagId, communityId)
+- `peeranha_community__tag_updated` - TagUpdated(address,uint8,uint32) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, user, tagId, communityId)
+- `peeranha_content__change_post_type` - ChangePostType(address,uint256,uint8) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, user, postId, newPostType)
+- `peeranha_content__comment_created` - CommentCreated(address,uint256,uint16,uint8) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, user, postId, parentReplyId, commentId)
+- `peeranha_content__comment_deleted` - CommentDeleted(address,uint256,uint16,uint8) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, user, postId, parentReplyId, commentId)
+- `peeranha_content__comment_edited` - CommentEdited(address,uint256,uint16,uint8) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, user, postId, parentReplyId, commentId)
+- `peeranha_content__forum_item_voted` - ForumItemVoted(address,uint256,uint16,uint8,int8) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, user, postId, replyId, commentId, voteDirection)
+- `peeranha_content__post_created` - PostCreated(address,uint32,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, user, communityId, postId)
+- `peeranha_content__post_deleted` - PostDeleted(address,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, user, postId)
+- `peeranha_content__post_edited` - PostEdited(address,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, user, postId)
+- `peeranha_content__reply_created` - ReplyCreated(address,uint256,uint16,uint16) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, user, postId, parentReplyId, replyId)
+- `peeranha_content__reply_deleted` - ReplyDeleted(address,uint256,uint16) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, user, postId, replyId)
+- `peeranha_content__reply_edited` - ReplyEdited(address,uint256,uint16) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, user, postId, replyId)
+- `peeranha_content__set_documentation_tree` - SetDocumentationTree(address,uint32) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, userAddr, communityId)
+- `peeranha_content__status_best_reply_changed` - StatusBestReplyChanged(address,uint256,uint16) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, user, postId, replyId)
+- `peeranha_content__translation_created` - TranslationCreated(address,uint256,uint16,uint8,uint8) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, user, postId, replyId, commentId, language)
+- `peeranha_content__translation_deleted` - TranslationDeleted(address,uint256,uint16,uint8,uint8) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, user, postId, replyId, commentId, language)
+- `peeranha_content__translation_edited` - TranslationEdited(address,uint256,uint16,uint8,uint8) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, user, postId, replyId, commentId, language)
+- `peeranha_nft__configure_new_achievement_n_f_t` - ConfigureNewAchievementNFT(uint64) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, achievementId)
+- `peeranha_nft__transfer` - Transfer(address,address,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, from, to, tokenId)
+- `peeranha_token__get_reward` - GetReward(address,uint16) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, user, period)
+- `peeranha_user__ban_community_user` - BanCommunityUser(address,address,uint32) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, userAddress, targetUserAddress, communityId)
+- `peeranha_user__followed_community` - FollowedCommunity(address,uint32) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, userAddress, communityId)
+- `peeranha_user__role_granted` - RoleGranted(bytes32,address,address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, role, account, sender)
+- `peeranha_user__role_revoked` - RoleRevoked(bytes32,address,address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, role, account, sender)
+- `peeranha_user__un_ban_community_user` - UnBanCommunityUser(address,address,uint32) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, userAddress, targetUserAddress, communityId)
+- `peeranha_user__unfollowed_community` - UnfollowedCommunity(address,uint32) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, userAddress, communityId)
+- `peeranha_user__user_created` - UserCreated(address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, userAddress)
+- `peeranha_user__user_updated` - UserUpdated(address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, userAddress)
+
+## Live HTTP API (run `nuthatch dev`)
+- `GET /`                    index status
+- `GET /tables`              every table with its columns
+- `GET /table/{name}?limit=N` recent rows of one table (hot + sealed)
+- `GET /entity/{id}`         one row by id (`{block:012}-{logindex:06}`)
+- `GET /sql?q=SELECT...`     read-only SQL; each table is a view named `{alias}__{event}`
+- `GET /balances?limit=N`    top holder balances (when an ERC-20 Transfer table is present)
+- `GET /balance/{address}`   one address's derived balance
+
+## MCP (for coding agents)
+Run `nuthatch mcp` (stdio) to expose tools: status, schema, tables, table, sql, entity,
+balance, top_balances. Fully offline against the local instance; nothing phones home.

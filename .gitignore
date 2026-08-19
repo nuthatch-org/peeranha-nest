@@ -1,0 +1,6 @@
+nuthatch.redb
+segments/
+mounts.toml
+data/
+peer.log
+run.sh

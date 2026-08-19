@@ -1,0 +1,411 @@
+# semantic.toml - what this nest's data *means* (RFC-0016). Read by the MCP `schema`
+# tool, the admin UI, and the scaffolded skill. Edit descriptions freely; the
+# `[table.*.footguns]` are DERIVED from the ABI and regenerated - leave them be.
+
+schema_version = 1
+
+[nest]
+description = "The `port-peeranha` nest on polygon. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_community__community_created]
+description = "`CommunityCreated(address,uint32)` events emitted by the `peeranha_community` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per CommunityCreated(address,uint32) event"
+
+[table.peeranha_community__community_created.columns]
+id = "The `id` uint32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+user = "The `user` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_community__community_created.footguns]
+reserved_words = ["user"]
+
+[table.peeranha_community__community_frozen]
+description = "`CommunityFrozen(address,uint32)` events emitted by the `peeranha_community` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per CommunityFrozen(address,uint32) event"
+
+[table.peeranha_community__community_frozen.columns]
+communityId = "The `communityId` uint32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+user = "The `user` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_community__community_frozen.footguns]
+reserved_words = ["user"]
+
+[table.peeranha_community__community_unfrozen]
+description = "`CommunityUnfrozen(address,uint32)` events emitted by the `peeranha_community` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per CommunityUnfrozen(address,uint32) event"
+
+[table.peeranha_community__community_unfrozen.columns]
+communityId = "The `communityId` uint32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+user = "The `user` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_community__community_unfrozen.footguns]
+reserved_words = ["user"]
+
+[table.peeranha_community__community_updated]
+description = "`CommunityUpdated(address,uint32)` events emitted by the `peeranha_community` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per CommunityUpdated(address,uint32) event"
+
+[table.peeranha_community__community_updated.columns]
+id = "The `id` uint32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+user = "The `user` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_community__community_updated.footguns]
+reserved_words = ["user"]
+
+[table.peeranha_community__tag_created]
+description = "`TagCreated(address,uint8,uint32)` events emitted by the `peeranha_community` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per TagCreated(address,uint8,uint32) event"
+
+[table.peeranha_community__tag_created.columns]
+communityId = "The `communityId` uint32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+tagId = "The `tagId` uint8 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+user = "The `user` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_community__tag_created.footguns]
+reserved_words = ["user"]
+
+[table.peeranha_community__tag_updated]
+description = "`TagUpdated(address,uint8,uint32)` events emitted by the `peeranha_community` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per TagUpdated(address,uint8,uint32) event"
+
+[table.peeranha_community__tag_updated.columns]
+communityId = "The `communityId` uint32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+tagId = "The `tagId` uint8 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+user = "The `user` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_community__tag_updated.footguns]
+reserved_words = ["user"]
+
+[table.peeranha_content__change_post_type]
+description = "`ChangePostType(address,uint256,uint8)` events emitted by the `peeranha_content` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per ChangePostType(address,uint256,uint8) event"
+
+[table.peeranha_content__change_post_type.columns]
+newPostType = "The `newPostType` uint8 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+postId = "The `postId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+user = "The `user` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_content__change_post_type.footguns]
+reserved_words = ["user"]
+big_ints = ["postId"]
+overflows_dec = ["postId"]
+
+[table.peeranha_content__comment_created]
+description = "`CommentCreated(address,uint256,uint16,uint8)` events emitted by the `peeranha_content` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per CommentCreated(address,uint256,uint16,uint8) event"
+
+[table.peeranha_content__comment_created.columns]
+commentId = "The `commentId` uint8 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+parentReplyId = "The `parentReplyId` uint16 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+postId = "The `postId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+user = "The `user` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_content__comment_created.footguns]
+reserved_words = ["user"]
+big_ints = ["postId"]
+overflows_dec = ["postId"]
+
+[table.peeranha_content__comment_deleted]
+description = "`CommentDeleted(address,uint256,uint16,uint8)` events emitted by the `peeranha_content` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per CommentDeleted(address,uint256,uint16,uint8) event"
+
+[table.peeranha_content__comment_deleted.columns]
+commentId = "The `commentId` uint8 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+parentReplyId = "The `parentReplyId` uint16 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+postId = "The `postId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+user = "The `user` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_content__comment_deleted.footguns]
+reserved_words = ["user"]
+big_ints = ["postId"]
+overflows_dec = ["postId"]
+
+[table.peeranha_content__comment_edited]
+description = "`CommentEdited(address,uint256,uint16,uint8)` events emitted by the `peeranha_content` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per CommentEdited(address,uint256,uint16,uint8) event"
+
+[table.peeranha_content__comment_edited.columns]
+commentId = "The `commentId` uint8 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+parentReplyId = "The `parentReplyId` uint16 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+postId = "The `postId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+user = "The `user` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_content__comment_edited.footguns]
+reserved_words = ["user"]
+big_ints = ["postId"]
+overflows_dec = ["postId"]
+
+[table.peeranha_content__forum_item_voted]
+description = "`ForumItemVoted(address,uint256,uint16,uint8,int8)` events emitted by the `peeranha_content` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per ForumItemVoted(address,uint256,uint16,uint8,int8) event"
+
+[table.peeranha_content__forum_item_voted.columns]
+commentId = "The `commentId` uint8 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+postId = "The `postId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+replyId = "The `replyId` uint16 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+user = "The `user` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+voteDirection = "The `voteDirection` int8 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_content__forum_item_voted.footguns]
+reserved_words = ["user"]
+big_ints = ["postId"]
+overflows_dec = ["postId"]
+
+[table.peeranha_content__post_created]
+description = "`PostCreated(address,uint32,uint256)` events emitted by the `peeranha_content` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per PostCreated(address,uint32,uint256) event"
+
+[table.peeranha_content__post_created.columns]
+communityId = "The `communityId` uint32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+postId = "The `postId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+user = "The `user` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_content__post_created.footguns]
+reserved_words = ["user"]
+big_ints = ["postId"]
+overflows_dec = ["postId"]
+
+[table.peeranha_content__post_deleted]
+description = "`PostDeleted(address,uint256)` events emitted by the `peeranha_content` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per PostDeleted(address,uint256) event"
+
+[table.peeranha_content__post_deleted.columns]
+postId = "The `postId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+user = "The `user` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_content__post_deleted.footguns]
+reserved_words = ["user"]
+big_ints = ["postId"]
+overflows_dec = ["postId"]
+
+[table.peeranha_content__post_edited]
+description = "`PostEdited(address,uint256)` events emitted by the `peeranha_content` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per PostEdited(address,uint256) event"
+
+[table.peeranha_content__post_edited.columns]
+postId = "The `postId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+user = "The `user` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_content__post_edited.footguns]
+reserved_words = ["user"]
+big_ints = ["postId"]
+overflows_dec = ["postId"]
+
+[table.peeranha_content__reply_created]
+description = "`ReplyCreated(address,uint256,uint16,uint16)` events emitted by the `peeranha_content` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per ReplyCreated(address,uint256,uint16,uint16) event"
+
+[table.peeranha_content__reply_created.columns]
+parentReplyId = "The `parentReplyId` uint16 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+postId = "The `postId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+replyId = "The `replyId` uint16 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+user = "The `user` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_content__reply_created.footguns]
+reserved_words = ["user"]
+big_ints = ["postId"]
+overflows_dec = ["postId"]
+
+[table.peeranha_content__reply_deleted]
+description = "`ReplyDeleted(address,uint256,uint16)` events emitted by the `peeranha_content` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per ReplyDeleted(address,uint256,uint16) event"
+
+[table.peeranha_content__reply_deleted.columns]
+postId = "The `postId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+replyId = "The `replyId` uint16 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+user = "The `user` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_content__reply_deleted.footguns]
+reserved_words = ["user"]
+big_ints = ["postId"]
+overflows_dec = ["postId"]
+
+[table.peeranha_content__reply_edited]
+description = "`ReplyEdited(address,uint256,uint16)` events emitted by the `peeranha_content` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per ReplyEdited(address,uint256,uint16) event"
+
+[table.peeranha_content__reply_edited.columns]
+postId = "The `postId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+replyId = "The `replyId` uint16 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+user = "The `user` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_content__reply_edited.footguns]
+reserved_words = ["user"]
+big_ints = ["postId"]
+overflows_dec = ["postId"]
+
+[table.peeranha_content__set_documentation_tree]
+description = "`SetDocumentationTree(address,uint32)` events emitted by the `peeranha_content` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per SetDocumentationTree(address,uint32) event"
+
+[table.peeranha_content__set_documentation_tree.columns]
+communityId = "The `communityId` uint32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+userAddr = "The `userAddr` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_content__status_best_reply_changed]
+description = "`StatusBestReplyChanged(address,uint256,uint16)` events emitted by the `peeranha_content` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per StatusBestReplyChanged(address,uint256,uint16) event"
+
+[table.peeranha_content__status_best_reply_changed.columns]
+postId = "The `postId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+replyId = "The `replyId` uint16 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+user = "The `user` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_content__status_best_reply_changed.footguns]
+reserved_words = ["user"]
+big_ints = ["postId"]
+overflows_dec = ["postId"]
+
+[table.peeranha_content__translation_created]
+description = "`TranslationCreated(address,uint256,uint16,uint8,uint8)` events emitted by the `peeranha_content` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per TranslationCreated(address,uint256,uint16,uint8,uint8) event"
+
+[table.peeranha_content__translation_created.columns]
+commentId = "The `commentId` uint8 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+language = "The `language` uint8 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+postId = "The `postId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+replyId = "The `replyId` uint16 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+user = "The `user` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_content__translation_created.footguns]
+reserved_words = ["user"]
+big_ints = ["postId"]
+overflows_dec = ["postId"]
+
+[table.peeranha_content__translation_deleted]
+description = "`TranslationDeleted(address,uint256,uint16,uint8,uint8)` events emitted by the `peeranha_content` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per TranslationDeleted(address,uint256,uint16,uint8,uint8) event"
+
+[table.peeranha_content__translation_deleted.columns]
+commentId = "The `commentId` uint8 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+language = "The `language` uint8 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+postId = "The `postId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+replyId = "The `replyId` uint16 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+user = "The `user` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_content__translation_deleted.footguns]
+reserved_words = ["user"]
+big_ints = ["postId"]
+overflows_dec = ["postId"]
+
+[table.peeranha_content__translation_edited]
+description = "`TranslationEdited(address,uint256,uint16,uint8,uint8)` events emitted by the `peeranha_content` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per TranslationEdited(address,uint256,uint16,uint8,uint8) event"
+
+[table.peeranha_content__translation_edited.columns]
+commentId = "The `commentId` uint8 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+language = "The `language` uint8 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+postId = "The `postId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+replyId = "The `replyId` uint16 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+user = "The `user` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_content__translation_edited.footguns]
+reserved_words = ["user"]
+big_ints = ["postId"]
+overflows_dec = ["postId"]
+
+[table.peeranha_nft__configure_new_achievement_n_f_t]
+description = "`ConfigureNewAchievementNFT(uint64)` events emitted by the `peeranha_nft` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per ConfigureNewAchievementNFT(uint64) event"
+
+[table.peeranha_nft__configure_new_achievement_n_f_t.columns]
+achievementId = "The `achievementId` uint64 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_nft__transfer]
+description = "`Transfer(address,address,uint256)` events emitted by the `peeranha_nft` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per Transfer(address,address,uint256) event"
+
+[table.peeranha_nft__transfer.columns]
+from = "The `from` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+to = "The `to` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+tokenId = "The `tokenId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_nft__transfer.footguns]
+reserved_words = [
+    "from",
+    "to",
+]
+big_ints = ["tokenId"]
+overflows_dec = ["tokenId"]
+
+[table.peeranha_token__get_reward]
+description = "`GetReward(address,uint16)` events emitted by the `peeranha_token` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per GetReward(address,uint16) event"
+
+[table.peeranha_token__get_reward.columns]
+period = "The `period` uint16 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+user = "The `user` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_token__get_reward.footguns]
+reserved_words = ["user"]
+
+[table.peeranha_user__ban_community_user]
+description = "`BanCommunityUser(address,address,uint32)` events emitted by the `peeranha_user` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per BanCommunityUser(address,address,uint32) event"
+
+[table.peeranha_user__ban_community_user.columns]
+communityId = "The `communityId` uint32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+targetUserAddress = "The `targetUserAddress` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+userAddress = "The `userAddress` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_user__followed_community]
+description = "`FollowedCommunity(address,uint32)` events emitted by the `peeranha_user` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per FollowedCommunity(address,uint32) event"
+
+[table.peeranha_user__followed_community.columns]
+communityId = "The `communityId` uint32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+userAddress = "The `userAddress` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_user__role_granted]
+description = "`RoleGranted(bytes32,address,address)` events emitted by the `peeranha_user` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per RoleGranted(bytes32,address,address) event"
+
+[table.peeranha_user__role_granted.columns]
+account = "The `account` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+role = "The `role` bytes32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+sender = "The `sender` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_user__role_revoked]
+description = "`RoleRevoked(bytes32,address,address)` events emitted by the `peeranha_user` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per RoleRevoked(bytes32,address,address) event"
+
+[table.peeranha_user__role_revoked.columns]
+account = "The `account` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+role = "The `role` bytes32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+sender = "The `sender` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_user__un_ban_community_user]
+description = "`UnBanCommunityUser(address,address,uint32)` events emitted by the `peeranha_user` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per UnBanCommunityUser(address,address,uint32) event"
+
+[table.peeranha_user__un_ban_community_user.columns]
+communityId = "The `communityId` uint32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+targetUserAddress = "The `targetUserAddress` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+userAddress = "The `userAddress` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_user__unfollowed_community]
+description = "`UnfollowedCommunity(address,uint32)` events emitted by the `peeranha_user` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per UnfollowedCommunity(address,uint32) event"
+
+[table.peeranha_user__unfollowed_community.columns]
+communityId = "The `communityId` uint32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+userAddress = "The `userAddress` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_user__user_created]
+description = "`UserCreated(address)` events emitted by the `peeranha_user` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per UserCreated(address) event"
+
+[table.peeranha_user__user_created.columns]
+userAddress = "The `userAddress` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.peeranha_user__user_updated]
+description = "`UserUpdated(address)` events emitted by the `peeranha_user` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per UserUpdated(address) event"
+
+[table.peeranha_user__user_updated.columns]
+userAddress = "The `userAddress` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[view]
+
+# Authored views (views/*.sql) are described here so the MCP/`/schema` can render them:
+# [view.your_view_name]
+# description = "What this derivation computes."
