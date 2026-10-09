@@ -4,7 +4,7 @@ An installable Nuthatch nest for **Peeranha** on Polygon - the community-driven 
 communities, tags, posts, replies and reputation.
 
 ```sh
-nuthatch init --from https://github.com/nightswatchhq/peeranha-nest
+nuthatch init --from https://github.com/nuthatch-org/peeranha-nest
 nuthatch dev --dir peeranha-nest --rpc <a polygon archive endpoint> --window 640 --seal-direct
 ```
 
